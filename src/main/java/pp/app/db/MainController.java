@@ -1,4 +1,4 @@
-package pp.app.db.User;
+package pp.app.db;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,7 +16,6 @@ public class MainController {
 
     public MainController(UserRepository userRepository) {
         this.userRepository = userRepository;
-
     }
 
     @GetMapping("/")
@@ -33,6 +32,4 @@ public class MainController {
         userRepository.save(user);
         return "redirect:/";
     }
-
-
 }

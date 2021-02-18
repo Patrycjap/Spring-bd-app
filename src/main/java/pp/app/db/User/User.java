@@ -11,7 +11,6 @@ import java.time.LocalDate;
 @Entity
 public class User {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -19,6 +18,8 @@ public class User {
     private String surname;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate birthdate;
+    private boolean hasNewsletter;
+    private String email;
 
     public Long getId() {
         return id;
@@ -50,5 +51,21 @@ public class User {
 
     public void setBirthdate(LocalDate birthdate) {
         this.birthdate = birthdate;
+    }
+
+    public boolean isHasNewsletter() {
+        return hasNewsletter;
+    }
+
+    public void setHasNewsletter(boolean hasNewsletter) {
+        this.hasNewsletter = hasNewsletter;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
